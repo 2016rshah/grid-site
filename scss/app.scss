@@ -38,26 +38,23 @@
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
-
-// .row{
-// 	height:33vh;
-// 	//width:100vw;
-// 	// margin:0px;
-// }
-
+body{
+    background-color:$gainsboro;
+}
 .row {
 	min-width:100% !important;
 	height:33vh;
 }
-.section-1{
-	background-color:$gainsboro;
-}
 .section{
 	height:100%;
+    padding:0px;
+}
+.front, .back{
+    padding:10px;
+    text-align:center;
 }
 
-
-$colour1: rgb(210, 77, 87); 
+$colour1: rgb(220, 198, 224); 
 $colour2: rgb(220, 198, 224); 
 $colour3: rgb(103, 65, 114);
 $colour4: rgb(68,108,179);   
@@ -70,12 +67,67 @@ $colour9: rgb(207, 0, 15);
 $colors: $colour1, $colour2, $colour3, $colour4, $colour5, $colour6, $colour7, $colour8, $colour9;
 
 @for $i from 1 through length($colors) {
-    .section-#{$i} {
-        background-color: rgba(nth($colors, $i), 0.6);
+    // .section-#{$i} {
+    //     background-color: rgba(nth($colors, $i), 1);
 
-        &:hover {
-            background-color: rgba(nth($colors, $i), 1);
-            cursor: pointer;
-        }
+    //     &:hover {
+    //         background-color: rgba(nth($colors, $i), 0.6);
+    //         cursor: pointer;
+    //     }
+    // }
+    .front-#{$i} {
+        background-color: rgba(nth($colors, $i), 1);
     }
+    .back-#{$i} {
+        background-color:rgba(nth($colors, $i), 0.6);
+    }
+}
+
+
+
+/* entire container, keeps perspective */
+.flip-container {
+    width: 33.33vw;
+    height: 100%;
+    perspective: 1000;
+}
+    /* flip the pane when hovered */
+    .flip-container:hover .flipper, .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+    }
+
+.flip-container, .front, .back {
+    width: 33.33vw;
+    height: 100%;
+}
+
+/* flip speed goes here */
+.flipper {
+    width: 33.33vw;
+    height: 100%;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+    transform: rotateY(180deg);
 }
