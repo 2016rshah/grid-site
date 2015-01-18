@@ -38,3 +38,44 @@
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
+
+// .row{
+// 	height:33vh;
+// 	//width:100vw;
+// 	// margin:0px;
+// }
+
+.row {
+	min-width:100% !important;
+	height:33vh;
+}
+.section-1{
+	background-color:$gainsboro;
+}
+.section{
+	height:100%;
+}
+
+
+$colour1: rgb(210, 77, 87); 
+$colour2: rgb(220, 198, 224); 
+$colour3: rgb(103, 65, 114);
+$colour4: rgb(68,108,179);   
+$colour5: rgb(135, 211, 124);   
+$colour6: rgb(235, 149, 50);   
+$colour7: rgb(108, 122, 137);   
+$colour8: rgb(134, 226, 213);   
+$colour9: rgb(207, 0, 15);   
+
+$colors: $colour1, $colour2, $colour3, $colour4, $colour5, $colour6, $colour7, $colour8, $colour9;
+
+@for $i from 1 through length($colors) {
+    .section-#{$i} {
+        background-color: rgba(nth($colors, $i), 0.6);
+
+        &:hover {
+            background-color: rgba(nth($colors, $i), 1);
+            cursor: pointer;
+        }
+    }
+}
