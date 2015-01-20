@@ -2,12 +2,15 @@
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation</title>
     <link rel="stylesheet" href="stylesheets/app.css" />
     <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="js/three.min.js"></script>
+    <script src="js/animation.js"></script>
   </head>
   <body>
+    <div id = "wrap">
     <div class = "row">
       <div class = "column small-4 section section-1">
         <div class = "flip-container"  ontouchstart="this.classList.toggle('hover');">
@@ -24,11 +27,11 @@
       <div class = "column small-4 section section-2">
         <div class = "flip-container"  ontouchstart="this.classList.toggle('hover');">
           <div class="flipper">
-            <div class="front front-2">
-                <!-- Jekyll is a great CMS for developers and GitHub Pages is a great host to store your Jekyll sites. There is just one problem, GitHub runs Jekyll in safe mode, which means you can't use plugins. One thing you can do is building the Jekyll website locally and then push to GitHub. -->
+            <div class="front front-2" id = "animation">
+                <!-- This is where the animation is -->
             </div>
             <div class="back back-2">
-                <!-- Git provides a way to have aliases of bash commands. You can do this by adding items to the alias key of your configuration. For this, you can add this locally by adding this lines to your %PROJECT_ROOT%/.git/config file: -->
+                <div class = "card-caption"><p>That is a trig function being graphed in three dimensions using THREEjs. It's pretty cool and you can check it out <a href = "http://threejs.meteor.com/animations/animation4">here</a></p></div>
             </div>
           </div>
         </div>
@@ -122,6 +125,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
