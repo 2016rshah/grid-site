@@ -50,13 +50,18 @@ body{
 }
 .section{
 	height:100%;
-    padding:0px;
+  padding:0px;
+  overflow:hidden;
 }
 
+//in gradient order
+// $colour1: rgb(52, 73, 94); $colour2: rgb(71,98,120); $colour3: rgb(103,138,158);
+// $colour4: rgb(127,166,183); $colour5: rgb(140,181,196);  $colour6: rgb(154,195,209);   
+// $colour7: rgb(182,224,234); $colour8: rgb(197,239,247); $colour9: rgb(228, 241, 254);   
 
-$colour1: rgb(52, 73, 94); $colour2: rgb(52, 152, 219); $colour3: rgb(41, 128, 185);
-$colour4: rgb(46, 204, 113); $colour5: rgb(39, 174, 96);  $colour6: rgb(22, 160, 133);   
-$colour7: rgb(207, 0, 15); $colour8: rgb(217, 30, 24); $colour9: rgb(242, 38, 19);   
+$colour1: rgb(52, 73, 94); $colour2: rgb(127,166,183); $colour3: rgb(103,138,158);
+$colour4: rgb(71,98,120); $colour5: rgb(140,181,196);  $colour6:rgb(158, 217, 229);   
+$colour7: rgb(103,138,158); $colour8: rgb(154,195,209); $colour9: rgb(52, 73, 94);  
 
 $colors: $colour1, $colour2, $colour3, $colour4, $colour5, $colour6, $colour7, $colour8, $colour9;
 
@@ -65,7 +70,7 @@ $colors: $colour1, $colour2, $colour3, $colour4, $colour5, $colour6, $colour7, $
         background-color: rgba(nth($colors, $i), 1);
     }
     .back-#{$i} {
-        background-color:rgba(nth($colors, $i), 0.7);
+        background-color:rgba(nth($colors, $i), 1);
     }
 }
 
@@ -90,29 +95,19 @@ $colors: $colour1, $colour2, $colour3, $colour4, $colour5, $colour6, $colour7, $
   height: 100%;
   width: 100%;
 }
-.no-margin{
-    margin-left:0px;
-    margin-right:0px;
+
+.front-9{
+  text-align:left;
 }
-.rotate-ccw-45 {
-
-    /* Safari */
-    -webkit-transform: rotate(-45deg);
-
-    /* Firefox */
-    -moz-transform: rotate(-45deg);
-
-    /* Opera */
-    -o-transform: rotate(-45deg);
-
+.code{
+  height:100%;
+  width:100%;
 }
-.rotate-cw-45{
-    /* Safari */
-    -webkit-transform: rotate(45deg);
+pre{
+  height:100%;
+  width:100%;
+}
 
-    /* Firefox */
-    -moz-transform: rotate(45deg);
-
-    /* Opera */
-    -o-transform: rotate(45deg);
+h1{
+  color:white;
 }
