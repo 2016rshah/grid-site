@@ -70,7 +70,10 @@ $colors: $colour1, $colour2, $colour3, $colour4, $colour5, $colour6, $colour7, $
         background-color: rgba(nth($colors, $i), 1);
     }
     .back-#{$i} {
-        background-color:rgba(nth($colors, $i), 1);
+      background-color: rgba(nth($colors, $i), 1);
+    }
+    .mobile-#{$i} {
+      background-color:rgba(nth($colors, $i), 1);
     }
 }
 
@@ -110,4 +113,11 @@ pre{
 
 h1{
   color:white;
+}
+.mobile{
+  height:50vh;
+}
+
+a{
+  color:#369D73;
 }
